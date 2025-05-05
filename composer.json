@@ -1,0 +1,93 @@
+{
+    "name": "apelimpesa/mpesa-php",
+    "description": "A comprehensive PHP library for integrating with the M-Pesa API",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "mpesa",
+        "safaricom",
+        "payment",
+        "api",
+        "mobile-money",
+        "kenya",
+        "africa"
+    ],
+    "authors": [
+        {
+            "name": "Livingstone Apeli",
+            "email": "livingstoneapeli@gmail.com",
+            "homepage": "https://apelisolutions.com",
+            "role": "Software Developer"
+        }
+        
+    ],
+    "support": {
+        "email": "livingstoneapeli@gmail.com",
+        "issues": "https://github.com/ApeliDev/mpesa-php/issues",
+        "source": "https://github.com/ApeliDev/mpesa-php",
+        "docs": "https://ApeliDev.github.io/mpesa-php"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/ApeliDev"
+        },
+        {
+            "type": "patreon",
+            "url": "https://www.patreon.com/ApeliDev"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "monolog/monolog": "^2.9",
+        "nesbot/carbon": "^2.0",
+        "vlucas/phpdotenv": "^5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.4",
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpstan/phpstan": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpmd/phpmd": "^2.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "ApeliMpesa\\Mpesa\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApeliMpesa\\Mpesa\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR12 src tests",
+        "fix-style": "phpcbf -p --standard=PSR12 src tests",
+        "analyse": "phpstan analyse --level=7 src",
+        "md": "phpmd src text cleancode,codesize,controversial,design,naming,unusedcode",
+        "cs-fix": "php-cs-fixer fix --using-cache=no",
+        "check-all": [
+            "@check-style",
+            "@analyse",
+            "@md",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        }
+    }
+}
